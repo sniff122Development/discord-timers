@@ -129,7 +129,7 @@ class TimerManager:
 
     def __init__(self, bot):
         self._bot = bot
-        self.__timers = ListBasedQueue(loop=bot.loop)
+        self.__timers = ListBasedQueue()
         self._current_timer = None
 
         self._task = self._bot.loop.create_task(self.poll_timers())
